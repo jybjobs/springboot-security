@@ -5,9 +5,10 @@ springboot
 
 ## spring actuator
 
-## spring swagger2
+## spring swagger2(rest api 文档添加)
 
-rest api 文档添加
+```
+
  １、引入ｊａｒ
  ２、在应用主类中增加　@EnableSwagger2Doc
  ３、在方法上配置
@@ -52,3 +53,5 @@ rest api 文档添加
    swagger.base-package=swagger扫描的基础包，默认：全扫描
    swagger.base-path=需要处理的基础URL规则，默认：/**
    swagger.exclude-path=需要排除的URL规则，默认：空
+   ```
+   
