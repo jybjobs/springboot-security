@@ -14,12 +14,12 @@ spring:
     favicon:
       enabled: false #关闭logo
   datasource:
-#    url: jdbc:mysql://192.168.70.44:3306/jpa
-#    username: openbridge
-#    password: Admin@123
-    url: jdbc:mysql://127.0.0.1:3306/jpa
-    username: root
-    password: 123456
+    url: jdbc:mysql://192.168.70.44:3306/jpa
+    username: openbridge
+    password: Admin@123
+#    url: jdbc:mysql://127.0.0.1:3306/jpa
+#    username: root
+#    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:
@@ -34,7 +34,18 @@ logging:
   level: debug
 management:
   security:
-    enabled: false  # 暂时关闭监控的权限认证
+    enabled: false # 暂时关闭监控的权限认证
+  context-path:  /
+swagger:
+  base-path: /**
+  title: spring-boot 测试项目
+  version: 1.0.0
+  license: jinyubing@yihecloud.com
+  license-url: www.yihecloud.com
+  contact:
+    name: jinyubing
+    url: www.yihecloud.com
+    email: jinyubing@yihecloud.com
 #security:
 #  user:
 #    password: admin

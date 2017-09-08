@@ -3,6 +3,8 @@ package com.yihecloud.controller;
 import com.yihecloud.entity.Customer;
 import com.yihecloud.entity.CustomerRepository;
 import com.yihecloud.service.ICustomerService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -71,7 +74,9 @@ public class IndexController     {
      * @param id
      * @return
      */
-    @RequestMapping(value = "customer/{id}")
+    @ApiOperation(value = "查询客户信息",notes = "根据id查询客户信息")
+    @ApiImplicitParam(name = "id",value = "客户信息id",required = true,dataType = "Long" ,paramType = "path")
+    @RequestMapping(value = "customer/{id}",method = RequestMethod.GET)
     @ResponseBody
     public Customer getCustomer(@PathVariable("id") Long id) {
 //        logger.debug(customers.toString());

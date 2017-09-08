@@ -18,9 +18,7 @@ public class CustomUserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s)  {//重写 loadUserByUsername
-        System.out.println("user name :" + s);
         SysUser user = sysUserRepository.findByUsername(s);
-        System.out.println("user info:" + user.toString());
         if(user == null){
             throw new UsernameNotFoundException("user name not found. ");
         }
